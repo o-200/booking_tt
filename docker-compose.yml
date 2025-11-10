@@ -1,0 +1,13 @@
+services:
+  postgres:
+    image: postgres:18
+    restart: always
+    ports:
+      - "51213:5432"
+    env_file:
+      - .env
+    volumes:
+      - postgres_data:/var/lib/postgresql
+
+volumes:
+  postgres_data:
